@@ -1,4 +1,4 @@
-package org.spring.demo;
+package org.spring.demo.conf;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,4 +10,3 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class AppConfig{
 
 }
-

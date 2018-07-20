@@ -1,18 +1,19 @@
 package org.spring.demo.controller;
 
 import org.spring.demo.bean.Foo;
-import org.spring.demo.util.RestPreconditions;
 import org.spring.demo.service.IFooService;
+import org.spring.demo.util.RestPreconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/foo")
 public class FooController {
+
     @Autowired
     private IFooService service;
 
@@ -31,7 +32,8 @@ public class FooController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
-    public Long create(@RequestBody Foo resource) {
+    public Long create(@Validated @RequestBody Foo resource) {
+
         RestPreconditions.checkNotNull(resource);
         return service.create(resource);
     }

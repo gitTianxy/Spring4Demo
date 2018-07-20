@@ -35,6 +35,8 @@
 
 ## Spring Data
 ### MySql
+* transaction
+* orm
 
 ### Redis
 

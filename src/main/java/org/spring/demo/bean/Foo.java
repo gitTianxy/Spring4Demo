@@ -1,7 +1,10 @@
 package org.spring.demo.bean;
 
+import org.spring.demo.validation.NameValidation;
+
 public class Foo {
     private Long id;
+    @NameValidation
     private String name;
 
     public Long getId() {
